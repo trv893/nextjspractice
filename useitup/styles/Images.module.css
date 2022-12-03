@@ -1,0 +1,9 @@
+.carousel  {
+    width: 100% !important;
+    max-height: 25vh !important;
+}
+
+.carousel img {
+    max-height: 100px;  /* change this to whatever you want */
+    width: auto;
+}
