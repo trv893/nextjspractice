@@ -1,13 +1,25 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/globals.css'
+import "bootstrap/dist/css/bootstrap.css";
+import "../styles/globals.css";
 import { useEffect } from "react";
+import Layout from "./layout";
+import { SSRProvider } from "react-bootstrap";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <SSRProvider>
+      <Layout>
+        
+          <Component {...pageProps} />;
+        
+      </Layout>
+
+      </SSRProvider>
+    
+  );
 }
 
-export default MyApp
+export default MyApp;
