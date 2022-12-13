@@ -1,19 +1,34 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function AddIngredientNoLogin() {
+function  AddIngredientNoLogin() {
   const [ingredient, setIngredient] = useState('');
+  // const [ts, setTs] = useState('');
 
   const handleIngredientChange = (e) => {
     setIngredient(e.target.value);
-
   }
 
   const handleIngredientSubmit = (e) => {
     console.log(ingredient)
   }
+
+  
+
+// useEffect(() => {
+//   var f = async () => {
+//     var r = await fetch('/api/x');
+//     var y = await r.json(); 
+//     setTs(y.name);
+//   }
+//   f();
+
+// }, []);
+
+
+
 
   return (
     <>
@@ -21,7 +36,6 @@ function AddIngredientNoLogin() {
         <Form.Control
           onChange={handleIngredientChange}
           type="text"
-          placeholder="Type Ingredient Here..."
           aria-label="Ingredient to search"
           aria-describedby="ingredient-search"
         />
